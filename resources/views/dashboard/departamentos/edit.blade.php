@@ -13,13 +13,13 @@
 </head>
 <body>
     @include('dashboard.partials.nav-header-admin')
-    <h1>Actualizar Marca</h1><br><br>
+    <h1>Actualizar Departamento</h1><br><br>
 
     <div class="container">
         {{-- Recordar enviar el id --}}
-        <form action="{{route('marcas.update',$marca->id)}}" method="post">
+        <form action="{{route('departamentos.update',$departamento->id)}}" method="post">
             @method('PUT')
-            @include('dashboard.partials._formmarca')
+            @include('dashboard.partials._formdepartamento')
         </form>
     </div>
 </body>

@@ -24,7 +24,7 @@
             <div class="card">
                 
                 <div class="card-header">
-                    <a href="{{route('marcas.create')}}" class="btn btn-primary">Crear</a>
+                    <a href="{{route('departamentos.create')}}" class="btn btn-primary">Crear</a>
                     <table class="table table-striped">
                 <Thead>
                     <body>
@@ -33,7 +33,7 @@
                                 Id
                             </td>
                             <td>
-                                Marca
+                                Departamento
                             </td>
                             <td>
                                 Creado
@@ -50,25 +50,25 @@
 
                     {{-- recorrer arreglo --}}
                     {{-- la variable categorias que se manda aqui se va a llamar categorias --}}
-                    @foreach ($marcas as $marca)
+                    @foreach ($departamentos as $departamento)
                         <tr>
                             <td>
-                                {{$marca->id}}
+                                {{$departamento->id}}
                             </td>
                             <td>
-                                {{$marca->NombreMarca}}
+                                {{$departamento->NombreDepartamento}}
                             </td>
                             <td>
-                                {{$marca->created_at->format('d-m-Y')}}
+                                {{$departamento->created_at->format('d-m-Y')}}
                             </td>
                             <td>
-                                {{$marca->updated_at->format('d-m-Y')}}
+                                {{$departamento->updated_at->format('d-m-Y')}}
                             </td>
                             <td>
-                                <a href="{{route('marcas.show',$marca->id)}}" class="btn btn-outline-info">Ver</a>
-                                <a href="{{route('marcas.edit',$marca->id)}}" class="btn btn-outline-warning">Actualizar</a>
+                                <a href="{{route('departamentos.show',$departamento->id)}}" class="btn btn-outline-info">Ver</a>
+                                <a href="{{route('departamentos.edit',$departamento->id)}}" class="btn btn-outline-warning">Actualizar</a>
                                                         
-                                <form method="POST" action="{{route('marcas.destroy',$marca->id)}}">
+                                <form method="POST" action="{{route('departamentos.destroy',$departamento->id)}}">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn btn-outline-danger ms-5" type="submit">Borrar</button>
@@ -84,9 +84,9 @@
             
             
             </table>
-            @if ($marcas->hasPages())
+            @if ($departamentos->hasPages())
             <div class="px-6 py-4">
-                {{$marcas->links()}}
+                {{$departamentos->links()}}
             </div>
             
             @endif

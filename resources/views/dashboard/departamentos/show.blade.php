@@ -20,18 +20,18 @@
         <div class="container mt-5">
             <div class="card">
                 <div class="card-header">
-                  <h2>Ver Marca</h2>
+                  <h2>Ver Categoría</h2>
                 </div>
                 <div class="card-body p-6">
-                    <form action="{{route('marcas.store')}}" method="post">
+                    <form action="{{route('departamentos.store')}}" method="post">
 
             
                         @csrf
             
                         <section class="margen">
                             <label for="" class="form-label">Nombre</label>
-                            <input type="text" name="NombreMarca" class="form-control" disabled value="{{$marca->NombreMarca}} ">
-                            @error('NombreMarca')
+                            <input type="text" name="NombreDepartamento" class="form-control" disabled value="{{$departamento->NombreDepartamento}} ">
+                            @error('NombreDepartamento')
                                 <small class="text-light">{{ $message }}</small>
                             @enderror
                             <br>
@@ -39,7 +39,7 @@
                             
                         </section>
                     </form>
-                  <a href="{{route('marcas.index')}}" class="btn btn-outline-info">Regresar</a>
+                  <a href="{{route('departamentos.index')}}" class="btn btn-outline-info">Regresar</a>
                 </div>
             </div>
         </div>

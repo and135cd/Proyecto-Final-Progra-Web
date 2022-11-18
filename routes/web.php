@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\TipoUsuarioController;
 use App\Models\TipoUsuario;
@@ -26,3 +27,4 @@ route::resource('categorias',CategoriaController::class);
 route::resource('tipos',TipoUsuarioController::class);
 route::resource('clientes',ClienteController::class);
 route::resource('marcas',MarcaController::class);
+route::resource('departamentos',DepartamentoController::class);

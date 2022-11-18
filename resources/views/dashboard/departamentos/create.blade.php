@@ -22,7 +22,7 @@
         <div class="container">
 
 
-            <form action="{{route('marcas.store')}}" method="post"> 
+            <form action="{{route('departamentos.store')}}" method="post"> 
                 @include('dashboard.partials.sesion-flash-status')
         
                 <section class="row 6">
@@ -30,9 +30,9 @@
                     </article>
                     <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> <!-- si -->
                         <div class="form-floating mb-3">
-                            <input type="text" name="NombreMarca" class="form-control form-floating mb-3" placeholder="Marca" >
-                            <label for="text">Ingrese el nombre de la marca</label>
-                            @error('NombreMarca')
+                            <input type="text" name="NombreDepartamento" class="form-control form-floating mb-3" placeholder="Departamento" >
+                            <label for="text">Ingrese el nombre del departamento</label>
+                            @error('NombreDepartamento')
                                 <small class="text-danger ">{{ $message }}</small>
                             @enderror
                         </div>
@@ -40,7 +40,7 @@
                         
                         <center>
                             <button type="" class="btn btn-outline-warning btn-lg"><h4>Guardar</h4></button><br>
-                            <a href="{{route('marcas.index')}}" class="btn btn-outline-primary btn-lg mt-3">Regresar</a>
+                            <a href="{{route('departamentos.index')}}" class="btn btn-outline-primary btn-lg mt-3">Regresar</a>
                         </center>
         
                     </article>
