@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Sucursal extends Model
 {
     use HasFactory;
-    protected $fillable=['Direccion'];
+    protected $fillable=['Direccion','IdDepartamento'];
+    protected $table='sucursals';
 
     //Relacion uno a muchos
     public function Empleados(){

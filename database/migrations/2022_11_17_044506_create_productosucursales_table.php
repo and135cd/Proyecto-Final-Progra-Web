@@ -21,17 +21,13 @@ return new class extends Migration
             $table->unsignedBigInteger('IdSucursal');
 
             $table->foreign('IdProducto')->references('id')->on('productos')->onDelete('cascade');
-            $table->foreign('IdSucursal')->references('id')->on('sucursales')->onDelete('cascade');
+            $table->foreign('IdSucursal')->references('id')->on('sucursals')->onDelete('cascade');
 
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('productosucursales');

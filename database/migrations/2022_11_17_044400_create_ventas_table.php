@@ -27,9 +27,9 @@ return new class extends Migration
             $table->unsignedBigInteger('IdSucursal');
             $table->unsignedBigInteger('IdDepartamento');
 
-            $table->foreign('IdCliente')->references('id')->on('clientes');
-            $table->foreign('IdSucursal')->references('id')->on('sucursales');
-            $table->foreign('IdDepartamento')->references('id')->on('departamentos');
+            $table->foreign('IdCliente')->references('id')->on('clientes')->onDelete('cascade');
+            $table->foreign('IdSucursal')->references('id')->on('sucursals')->onDelete('cascade');
+            $table->foreign('IdDepartamento')->references('id')->on('departamentos')->onDelete('cascade');
 
             $table->timestamps();
         });

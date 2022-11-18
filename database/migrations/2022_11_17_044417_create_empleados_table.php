@@ -23,8 +23,8 @@ return new class extends Migration
             $table->unsignedBigInteger('IdTipoUsuario');
             $table->unsignedBigInteger('IdSucursal');
 
-            $table->foreign('IdTipoUsuario')->references('id')->on('tipousuarios');
-            $table->foreign('IdSucursal')->references('id')->on('sucursales');
+            $table->foreign('IdTipoUsuario')->references('id')->on('tipousuarios')->onDelete('cascade');
+            $table->foreign('IdSucursal')->references('id')->on('sucursals')->onDelete('cascade');
             
             $table->string('Usuario');
             $table->string('Contraseña');
