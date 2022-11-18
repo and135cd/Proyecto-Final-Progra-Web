@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\TipoUsuarioController;
+use App\Models\TipoUsuario;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::resource('categorias',CategoriaController::class);
+route::resource('tipos',TipoUsuarioController::class);
+route::resource('clientes',ClienteController::class);
+route::resource('marcas',MarcaController::class);

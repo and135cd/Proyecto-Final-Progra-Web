@@ -2,84 +2,55 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTipoUsuarioPost;
 use App\Models\TipoUsuario;
 use Illuminate\Http\Request;
 
 class TipoUsuarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $tipoUsuarios=TipoUsuario::orderBy('created_at','desc')->cursorpaginate(5);
+        echo view('dashboard.tipoUsuarios.index',['tipoUsuarios'=>$tipoUsuarios]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+        echo view ('dashboard.tipoUsuarios.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    
+    public function store(StoreTipoUsuarioPost $request)
     {
-        //
+        TipoUsuario::create($request->validated());
+        return redirect('tipos/create')->with('status', 'Muchas gracias, el tipo de usuario ha sido creado con exito');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\TipoUsuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
-     */
-    public function show(TipoUsuario $tipoUsuario)
+    
+    public function show(TipoUsuario $tipo)
     {
-        //
+        echo view('dashboard.tipoUsuarios.show', ["tipo"=>$tipo]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\TipoUsuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TipoUsuario $tipoUsuario)
+    
+    public function edit(TipoUsuario $tipo)
     {
-        //
+        echo view ('dashboard.tipoUsuarios.edit',['tipo'=>$tipo]); 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\TipoUsuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, TipoUsuario $tipoUsuario)
+    
+    public function update(StoreTipoUsuarioPost $request, TipoUsuario $tipo)
     {
-        //
+        $tipo->update($request->validated());
+        return back()->with('status', 'El tipo de usuario fue editado correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\TipoUsuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(TipoUsuario $tipoUsuario)
+    
+    public function destroy(TipoUsuario $tipo)
     {
-        //
+        $tipo->delete();
+        return back()->with('status','Tipo de usuario eliminado exitosamente');
     }
 }

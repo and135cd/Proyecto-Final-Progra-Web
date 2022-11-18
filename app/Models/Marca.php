@@ -9,7 +9,6 @@ class Marca extends Model
 {
     use HasFactory;
     protected $fillable=['NombreMarca'];
-    protected $table=['Marca'];
 
     //Relacion uno a mucho
     public function Productos(){

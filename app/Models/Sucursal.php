@@ -9,7 +9,6 @@ class Sucursal extends Model
 {
     use HasFactory;
     protected $fillable=['Direccion'];
-    protected $table=['Sucursal'];
 
     //Relacion uno a muchos
     public function Empleados(){

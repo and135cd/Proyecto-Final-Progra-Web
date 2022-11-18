@@ -10,7 +10,6 @@ class Empleado extends Model
     use HasFactory;
     protected $fillable=['Nombres','Apellidos','Telefono','Direccion','Dpi','Usuario','Contraseña'];
 
-    protected $table=['Empleado'];
     //Relacion muchos a uno
     public function TipoUsuario(){
         $this->belongsTo(TipoUsuario::class,'IdTipoUsuario');

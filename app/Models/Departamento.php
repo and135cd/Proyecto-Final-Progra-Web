@@ -9,7 +9,6 @@ class Departamento extends Model
 {
     use HasFactory;
     protected $fillable=['NombreDepartamento'];
-    protected $table=['Departamento'];
 
     //Relacion uno a muchos
     public function Sucursales(){

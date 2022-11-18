@@ -10,7 +10,6 @@ class Categoria extends Model
     use HasFactory;
 
     protected $fillable=['NombreCategoria'];
-    protected $table=['Categoria'];
 
     //Relacion muchos a muchos
     public function Marcas(){

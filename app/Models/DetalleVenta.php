@@ -9,7 +9,6 @@ class DetalleVenta extends Model
 {
     use HasFactory;
     protected $fillable=['Subtotal','Cantidad'];
-    protected $table=['DetalleVenta'];
 
     //Relacion muchos a uno
     public function Producto(){
