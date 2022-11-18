@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\TipoUsuarioController;
@@ -30,3 +31,4 @@ route::resource('clientes',ClienteController::class);
 route::resource('marcas',MarcaController::class);
 route::resource('departamentos',DepartamentoController::class);
 route::resource('sucursals',SucursalController::class);
+route::resource('empleados',EmpleadoController::class);

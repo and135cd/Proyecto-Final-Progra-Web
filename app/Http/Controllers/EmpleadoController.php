@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEmpleadoPost;
+use App\Http\Requests\StoreSucursalPost;
+use App\Models\Departamento;
 use App\Models\Empleado;
+use App\Models\Sucursal;
+use App\Models\TipoUsuario;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $empleados=Empleado::orderBy('created_at','desc')->cursorpaginate(5);
+        echo view('dashboard.empleados.index',['empleados'=>$empleados]);
     }
 
     /**
@@ -24,7 +26,9 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
-        //
+        $tipoU=TipoUsuario::all();
+        $sucursales=Sucursal::all();
+        echo view ('dashboard.empleados.create',compact('tipoU','sucursales'));
     }
 
     /**
@@ -33,9 +37,10 @@ class EmpleadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEmpleadoPost $request)
     {
-        //
+        Empleado::create($request->validated());
+        return redirect('empleados/create')->with('status', 'Muchas gracias, el empleado ha sido creado con éxito');
     }
 
     /**
@@ -46,7 +51,7 @@ class EmpleadoController extends Controller
      */
     public function show(Empleado $empleado)
     {
-        //
+        echo view('dashboard.empleados.show', ["empleado"=>$empleado]);
     }
 
     /**
@@ -57,7 +62,9 @@ class EmpleadoController extends Controller
      */
     public function edit(Empleado $empleado)
     {
-        //
+        $sucursales=Sucursal::all();
+        $tipos=TipoUsuario::all();
+        echo view ('dashboard.empleados.edit',compact('empleado','sucursales','tipos')); 
     }
 
     /**
@@ -67,9 +74,10 @@ class EmpleadoController extends Controller
      * @param  \App\Models\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empleado $empleado)
+    public function update(StoreEmpleadoPost $request, Empleado $empleado)
     {
-        //
+        $empleado->update($request->validated());
+        return back()->with('status', 'El emplaedo fue editado correctamente');
     }
 
     /**
@@ -80,6 +88,7 @@ class EmpleadoController extends Controller
      */
     public function destroy(Empleado $empleado)
     {
-        //
+        $empleado->delete();
+        return back()->with('status','Empleado eliminado exitosamente');
     }
 }

@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Empleado extends Model
 {
     use HasFactory;
-    protected $fillable=['Nombres','Apellidos','Telefono','Direccion','Dpi','Usuario','Contraseña'];
+    protected $fillable=['Nombres','Apellidos','Telefono','Direccion','Dpi','Usuario','Contraseña','IdTipoUsuario','IdSucursal'];
 
     //Relacion muchos a uno
     public function TipoUsuario(){
-        $this->belongsTo(TipoUsuario::class,'IdTipoUsuario');
+        return $this->belongsTo(TipoUsuario::class,'IdTipoUsuario');
     }
 
     //Relacion muchos a uno
     public function Sucursal(){
-        $this->belongsTo(Sucursal::class,'IdSucursal');
+        return $this->belongsTo(Sucursal::class,'IdSucursal');
     }
 }
