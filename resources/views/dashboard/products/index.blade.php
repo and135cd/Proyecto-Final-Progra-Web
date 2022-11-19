@@ -32,31 +32,24 @@
                             <td>
                                 Id
                             </td>
-
                             <td>
-                                Producto
+                                Nombres
                             </td>
-
                             <td>
-                                Precio
+                                Apellidos
                             </td>
-
                             <td>
-                                Marca
+                                Teléfono
                             </td>
-
                             <td>
-                                Estado
+                                Dirección
                             </td>
                            
                             <td>
-                                Código
+                                Usuario
                             </td>
-
-                            <td>
-                                Imagen
-                            </td>
-
+                            
+                            
                             <td>
                                 Creado
                             </td>
@@ -84,25 +77,18 @@
                                 {{$producto->Precio}}
                             </td>
                             <td>
-                                {{$producto->Marca->NombreMarca}}
+                                {{$producto->Estado}}
                             </td>
-                            
-                                @if ($producto->Estado==1)
-                                <td ><span class="badge rounded-pill text-bg-danger">Borrador</span></td>
-                                @else
-                                <td ><span class="badge rounded-pill text-bg-success">Publicado</span></td>
-                                @endif
-                                
-                            
-                            
                             <td>
                                 {{$producto->Codigo}}
                             </td>
-
+                            
                             <td>
-                                <img src="{{asset($producto->Imagen)}}" width="50" height="50" class="img img-responsive">
+                                <img src="{{asset($producto->Imagen)}}" width="50" height="50" alt="">
                             </td>
+
                            
+                            
                             <td>
                                 {{$producto->created_at->format('d-m-Y')}}
                             </td>

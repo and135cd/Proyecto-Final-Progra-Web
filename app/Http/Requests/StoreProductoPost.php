@@ -26,11 +26,11 @@ class StoreProductoPost extends FormRequest
         return [
             'NombreProducto' => 'required',
             'Precio' => 'required',
-            'IdMarca' => 'required',
             'Estado'=>'required',
             'Codigo'=>'required',
             'Descripcion'=>'required',
-            'Imagen' => 'required | mimes:jpeg,jpg,png | max:1000',
+            'IdMarca' => 'required',
+            
              
         ];
     }
