@@ -11,7 +11,7 @@ class Producto extends Model
     const BORRADOR=1;
     const PUBLICADO=2;
     
-    protected $fillable=['NombreProducto','Descripcion','Precio','Estado','Codigo','Imagen'];
+    protected $fillable=['NombreProducto','Descripcion','Precio','Estado','Codigo','Imagen','IdMarca'];
     
 
     public function Sucursales(){
