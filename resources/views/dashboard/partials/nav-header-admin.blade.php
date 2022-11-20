@@ -13,6 +13,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{url('/')}}">Inicio</a>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('productos.index')}}">Productos</a>
                 </li>
