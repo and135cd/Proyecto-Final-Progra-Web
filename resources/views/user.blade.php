@@ -22,5 +22,5 @@
 </div>
 
 
-Holaaa admin
+Holaaa usuario
 @endsection

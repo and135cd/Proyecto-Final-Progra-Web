@@ -6,10 +6,12 @@ use App\Http\Controllers\CategoriaMarcaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\GerenteController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\TipoUsuarioController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VentaController;
 use App\Models\TipoUsuario;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +35,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('dashboard','dashboard')->middleware('auth');
+
 route::resource('categorias',CategoriaController::class)->middleware('auth');
 route::resource('tipos',TipoUsuarioController::class)->middleware('auth');
 route::resource('clientes',ClienteController::class)->middleware('auth');
@@ -48,3 +50,8 @@ route::resource('ventas',VentaController::class)->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::resource('/users',UserController::class);
+Route::resource('/gerentes',GerenteController::class);
