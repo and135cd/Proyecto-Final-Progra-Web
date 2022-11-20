@@ -38,6 +38,25 @@
                             
                             
                         </section>
+
+                        
+
+                        <label for="" class="form-label">Categoría</label>
+                        <section class="margen" >
+                            <select disabled name="IdCategoria" id="IdCategoria" class="form-control">
+                                <option selected disabled value="">Seleccione una categoría</option>
+                                @foreach ($categorias as $categoria)
+                                    @if ($marca->IdCategoria== $categoria->id)
+                                        <option selected value="{{$categoria->id}}" id="{{$categoria->id}}">{{$categoria->NombreCategoria}}</option>
+                                    @else
+                                        <option value="{{$categoria->id}}" id="{{$categoria->id}}">{{$categoria->NombreCategoria}}</option>
+                                    @endif
+                                    
+                                @endforeach
+                            </select>
+                            
+                        </section>
+                        <br>
                     </form>
                   <a href="{{route('marcas.index')}}" class="btn btn-outline-info">Regresar</a>
                 </div>

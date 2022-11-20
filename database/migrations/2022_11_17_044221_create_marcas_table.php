@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('marcas', function (Blueprint $table) {
             $table->id();
             $table->string('NombreMarca');
+            $table->unsignedBigInteger('IdCategoria');
+            $table->foreign('IdCategoria')->references('id')->on('categorias')->onDelete('cascade');
             $table->timestamps();
         });
     }

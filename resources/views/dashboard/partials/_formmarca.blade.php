@@ -17,9 +17,25 @@
             <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> <!-- si -->
                 <div class="form-floating mb-3">
                     <input type="text" name="NombreMarca" class="form-control form-floating mb-3" placeholder="Marca" value="{{$marca->NombreMarca}}">
-                    <label for="text">Codigo</label>
+                    <label for="text">Marca</label>
                     @error('NombreMarca')
                     <small class="text-light">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-floating mb-3">
+                    <select name="IdCategoria" id="IdCategoria" class="form-control">
+                        <option selected disabled value="">Seleccione una categoría</option>
+                        @foreach ($categorias as $categoria)
+                            @if ($marca->IdCategoria==$categoria->id)
+                                <option selected value="{{$categoria->id}}" id="{{$categoria->id}}">{{$categoria->NombreCategoria}}</option>
+                            @else
+                                <option value="{{$categoria->id}}" id="{{$categoria->id}}">{{$categoria->NombreCategoria}}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                    @error('NombreMarca')
+                        <small class="text-danger ">{{ $message }}</small>
                     @enderror
                 </div>
 

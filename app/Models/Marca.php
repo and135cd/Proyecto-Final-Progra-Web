@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Marca extends Model
 {
     use HasFactory;
-    protected $fillable=['NombreMarca'];
+    protected $fillable=['NombreMarca','IdCategoria'];
 
     //Relacion uno a mucho
     public function Productos(){
@@ -17,6 +17,6 @@ class Marca extends Model
 
     //Relacion muchos a muchos
     public function Categorias(){
-        return $this->belongsToMany(Categoria::class,'IdCategoria');
+        return $this->belongsTo(Categoria::class,'IdCategoria');
     }
 }

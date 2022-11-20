@@ -13,6 +13,6 @@ class Categoria extends Model
 
     //Relacion muchos a muchos
     public function Marcas(){
-        return $this->belongsToMany(Marca::class,'IdMarca');
+        return $this->hasMany(Marca::class,'IdMarca');
     }
 }

@@ -30,8 +30,9 @@ class StoreProductoPost extends FormRequest
             'Codigo'=>'required',
             'Descripcion'=>'required',
             'IdMarca' => 'required',
+            'IdSucursal'=>'required',
             
-             
+            
         ];
     }
 }

@@ -43,6 +43,18 @@
                             @enderror
                             <br>
 
+                            <label for="" class="form-label">Marca</label>
+                            @foreach ($marcas as $marca)
+                                @if ($marca->id== $producto->IdMarca)
+                                    <input type="text" name="IdMarca" class="form-control" disabled value="{{$marca->NombreMarca}} ">
+                                @endif
+                            @endforeach
+                            
+                            @error('IdMarca')
+                                <small class="text-light">{{ $message }}</small>
+                            @enderror
+                            <br>
+
                             <label for="" class="form-label">Descripcion</label>
                             <input type="text" name="Descripcion" class="form-control" disabled value="{{$producto->Descripcion}} ">
                             @error('Descripcion')
@@ -65,6 +77,25 @@
                             <label for="" class="form-label">Codigo</label>
                             <input type="text" name="Codigo" class="form-control" disabled value="{{$producto->Codigo}} ">
                             @error('Codigo')
+                                <small class="text-light">{{ $message }}</small>
+                            @enderror
+                            <br>
+
+                            <label for="" class="form-label">Sucursal</label>
+                            @foreach ($sucursals as $sucursal)
+                                @if ($sucursal->id== $producto->IdSucursal)
+                                    <input type="text" name="IdSucursal" class="form-control" disabled value="{{$sucursal->Direccion}} ">
+                                @endif
+                            @endforeach
+                            
+                            @error('IdSucursal')
+                                <small class="text-light">{{ $message }}</small>
+                            @enderror
+                            <br>
+
+                            <label for="" class="form-label">Stock</label>
+                            <input type="text" name="Stock" class="form-control" disabled value="{{$producto->Stock}} ">
+                            @error('Stock')
                                 <small class="text-light">{{ $message }}</small>
                             @enderror
                             <br>

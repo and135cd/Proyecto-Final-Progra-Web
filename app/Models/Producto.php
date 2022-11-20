@@ -11,11 +11,11 @@ class Producto extends Model
     const BORRADOR=1;
     const PUBLICADO=2;
     
-    protected $fillable=['NombreProducto','Descripcion','Precio','Estado','Codigo','Imagen','IdMarca'];
+    protected $fillable=['NombreProducto','Descripcion','Precio','Estado','Codigo','Imagen','IdMarca','IdSucursal','Stock'];
     
 
     public function Sucursales(){
-        $this->belongsToMany(Sucursal::class,'IdSucursal')->withPivot('Stock');
+        $this->belongsTo(Sucursal::class,'IdSucursal');
     }
 
     //Relacion muchos a uno

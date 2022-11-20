@@ -22,7 +22,7 @@ class Sucursal extends Model
     }
 
     public function Productos(){
-        $this->belongsToMany(Producto::class,'IdProducto');
+        $this->hasMany(Producto::class,'IdProducto');
     }
 
     //Relacion uno amuchos

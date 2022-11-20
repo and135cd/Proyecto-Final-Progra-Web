@@ -24,7 +24,7 @@
             <div class="card">
                 
                 <div class="card-header">
-                    <a href="{{route('marcas.create')}}" class="btn btn-primary">Crear</a>
+                    <a href="{{route('categoriamarcas.create')}}" class="btn btn-outline-success">Asignar marcas</a> 
                     <table class="table table-striped">
                 <Thead>
                     <body>
@@ -33,52 +33,29 @@
                                 Id
                             </td>
                             <td>
-                                Marca
-                            </td>
-                            <td>
                                 Categoría
                             </td>
-                            <td>
-                                Creado
-                            </td>
-                            <td>
-                                Actualizado
-                            </td>
-                            <td>
-                                Acciones
-                            </td>
+                           
+                            
                         </tr>
                         
                     </body>
 
                     {{-- recorrer arreglo --}}
                     {{-- la variable categorias que se manda aqui se va a llamar categorias --}}
-                    @foreach ($marcas as $marca)
+                    @foreach ($categorias as $categoria)
                         <tr>
                             <td>
-                                {{$marca->id}}
+                                {{$categoria->id}}
                             </td>
                             <td>
-                                {{$marca->NombreMarca}}
+                                {{$categoria->NombreCategoria}}
                             </td>
+                           
                             <td>
-                                {{$marca->Categorias->NombreCategoria}}
-                            </td>
-                            <td>
-                                {{$marca->created_at->format('d-m-Y')}}
-                            </td>
-                            <td>
-                                {{$marca->updated_at->format('d-m-Y')}}
-                            </td>
-                            <td>
-                                <a href="{{route('marcas.show',$marca->id)}}" class="btn btn-outline-info">Ver</a>
-                                <a href="{{route('marcas.edit',$marca->id)}}" class="btn btn-outline-warning">Actualizar</a>
-                                                        
-                                <form method="POST" action="{{route('marcas.destroy',$marca->id)}}">
-                                @method('DELETE')
-                                @csrf
-                                <button class="btn btn-outline-danger ms-5" type="submit">Borrar</button>
-                                </form >
+                                
+                                            
+                                
 
                             </td>
                         </tr>
@@ -90,9 +67,9 @@
             
             
             </table>
-            @if ($marcas->hasPages())
+            @if ($categorias->hasPages())
             <div class="px-6 py-4">
-                {{$marcas->links()}}
+                {{$categorias->links()}}
             </div>
             
             @endif

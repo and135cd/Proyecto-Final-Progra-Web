@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\CategoriaMarcaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\EmpleadoController;
@@ -34,3 +35,4 @@ route::resource('departamentos',DepartamentoController::class);
 route::resource('sucursals',SucursalController::class);
 route::resource('empleados',EmpleadoController::class);
 route::resource('productos',ProductoController::class);
+route::resource('categoriamarcas',CategoriaMarcaController::class);

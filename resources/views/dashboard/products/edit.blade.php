@@ -89,7 +89,32 @@
                             @endforeach
                         </select>
                     </div>
-                   
+
+                    <div class="form-floating mb-3">
+                        <select name="IdSucursal" id="IdSucursal" class="form-control">
+                            <option value="" selected disabled>Seleccione una sucursal</option>
+                            @foreach ($sucursals as $sucursal)
+                                @if ($producto->IdSucursal==$sucursal->id)
+                                    <option selected value="{{$sucursal->id}}" id="{{$sucursal->id}}">{{$sucursal->Direccion}}</option>
+                                @else
+                                    <option value="{{$sucursal->id}}" id="{{$sucursal->id}}">{{$sucursal->Direccion}}</option>
+                                @endif
+                            @endforeach
+                        </select>
+
+
+                        @error('IdSucursal')
+                            <small class="text-danger ">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="number" step="0.25" name="Stock" class="form-control form-floating mb-3" placeholder="Stock" value="{{$producto->Stock}}">
+                        <label for="text">Stock</label>
+                        @error('Stock')
+                            <small class="text-danger ">{{ $message }}</small>
+                        @enderror
+                    </div>
 
                    
                     <center>

@@ -22,10 +22,15 @@ return new class extends Migration
             $table->string('Codigo');
             $table->string('Imagen');
             $table->string('Descripcion');
-
+            $table->integer('Stock');
+            
             $table->unsignedBigInteger('IdMarca');
+            $table->unsignedBigInteger('IdSucursal');
 
             $table->foreign('IdMarca')->references('id')->on('marcas')->onDelete('cascade');
+            $table->foreign('IdSucursal')->references('id')->on('sucursals')->onDelete('cascade');
+
+            
             $table->timestamps();
         });
     }

@@ -33,20 +33,24 @@
                                 Id
                             </td>
                             <td>
-                                Nombres
+                                Nombre
                             </td>
                             <td>
-                                Apellidos
+                                Precio
                             </td>
                             <td>
-                                Teléfono
+                                Estado
                             </td>
                             <td>
-                                Dirección
+                                Código
+                            </td>
+
+                            <td>
+                                Stock
                             </td>
                            
                             <td>
-                                Usuario
+                                Imagen
                             </td>
                             
                             
@@ -77,10 +81,17 @@
                                 {{$producto->Precio}}
                             </td>
                             <td>
-                                {{$producto->Estado}}
+                                @if ($producto->Estado==1)
+                                    <span class="badge rounded-pill text-bg-danger">Borrador</span>
+                                @else
+                                    <span class="badge rounded-pill text-bg-success">Publicado</span>
+                                @endif
                             </td>
                             <td>
                                 {{$producto->Codigo}}
+                            </td>
+                            <td>
+                                {{$producto->Stock}}
                             </td>
                             
                             <td>

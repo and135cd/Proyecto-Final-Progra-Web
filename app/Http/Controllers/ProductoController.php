@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductoPost;
 use App\Models\Marca;
 use App\Models\Producto;
+use App\Models\Sucursal;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -17,8 +18,9 @@ class ProductoController extends Controller
 
     public function create()
     {
+        $sucursals=Sucursal::all();
         $marcas=Marca::all();
-        return view('dashboard.products.create',compact('marcas'));
+        return view('dashboard.products.create',compact('marcas','sucursals'));
     }
 
     public function store(StoreProductoPost $request)
@@ -34,13 +36,16 @@ class ProductoController extends Controller
 
     public function show(Producto $producto)
     {
-        echo view('dashboard.products.show', ["producto"=>$producto]);
+        $sucursals=Sucursal::all();
+        $marcas= Marca::all();
+        echo view('dashboard.products.show', compact('producto','sucursals','marcas'));
     }
 
     public function edit(Producto $producto)
     {
+        $sucursals=Sucursal::all();
         $marcas= Marca::all();
-        echo view ('dashboard.products.edit',compact('producto','marcas')); 
+        echo view ('dashboard.products.edit',compact('producto','marcas','sucursals')); 
     }
 
     public function update(StoreProductoPost $request, Producto $producto)
