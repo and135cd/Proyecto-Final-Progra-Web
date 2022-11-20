@@ -6,16 +6,12 @@ use Illuminate\Http\Request;
 
 class GerenteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('sologerente',['only'=>['index']]);
     }
+
 
     public function index()
     {

@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 class SoloUser
 {
     /**
@@ -17,14 +18,14 @@ class SoloUser
     public function handle(Request $request, Closure $next)
     {
         switch(auth::user()->tipo){
-            case ('1'):
-                return redirect('home');;//si es admin continua al HOME
+            case('1'):
+                return redirect('home');
             break;
-            case ('2'):
-                return redirect('gerentes'); //si es gerente lo redirige a la ruta admin
+            case('2'):
+                return redirect('gerente');
             break;
-            case ('3'):
-                return next($request); //si es cliente lo redirige a la ruta user
+            case('3'):
+                return $next($request);
             break;
         }
     }

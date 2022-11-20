@@ -20,7 +20,4 @@
         </div>
     </div>
 </div>
-
-
-Holaaa gerente
 @endsection

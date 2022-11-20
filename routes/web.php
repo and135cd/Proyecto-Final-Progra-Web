@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CategoriaMarcaController;
 use App\Http\Controllers\ClienteController;
@@ -16,9 +15,6 @@ use App\Http\Controllers\VentaController;
 use App\Models\TipoUsuario;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use Dotenv\Exception\ValidationException;
-use Illuminate\Auth\Events\Login;
-use Illuminate\Validation\ValidationException as ValidationValidationException;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,7 +47,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::resource('usuario',UserController::class);
+Route::resource('gerente',GerenteController::class);
 
+Auth::routes();
 
-Route::resource('/users',UserController::class);
-Route::resource('/gerentes',GerenteController::class);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
