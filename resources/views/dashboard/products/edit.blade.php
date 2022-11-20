@@ -109,10 +109,10 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="number" step="0.25" name="Stock" class="form-control form-floating mb-3" placeholder="Stock" value="{{$producto->Stock}}">
+                        <input type="number "  name="Stock" class="form-control form-floating mb-3" placeholder="Stock" value="{{$producto->Stock}}">
                         <label for="text">Stock</label>
                         @error('Stock')
-                            <small class="text-danger ">{{ $message }}</small>
+                        <small class="text-light">{{ $message }}</small>
                         @enderror
                     </div>
 

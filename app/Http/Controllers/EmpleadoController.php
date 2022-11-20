@@ -26,9 +26,9 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
-        $tipoU=TipoUsuario::all();
+        
         $sucursales=Sucursal::all();
-        echo view ('dashboard.empleados.create',compact('tipoU','sucursales'));
+        echo view ('dashboard.empleados.create',compact('sucursales'));
     }
 
     /**
@@ -63,8 +63,7 @@ class EmpleadoController extends Controller
     public function edit(Empleado $empleado)
     {
         $sucursales=Sucursal::all();
-        $tipos=TipoUsuario::all();
-        echo view ('dashboard.empleados.edit',compact('empleado','sucursales','tipos')); 
+        echo view ('dashboard.empleados.edit',compact('empleado','sucursales')); 
     }
 
     /**

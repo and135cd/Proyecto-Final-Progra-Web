@@ -29,9 +29,6 @@ class StoreEmpleadoPost extends FormRequest
             'Telefono'=>'required',
             'Direccion'=>'required|min:4',
             'Dpi'=>'required',
-            'Usuario'=>'required',
-            'Contraseña'=>'required',
-            'IdTipoUsuario'=>'required',
             'IdSucursal'=>'required',
 
         ];

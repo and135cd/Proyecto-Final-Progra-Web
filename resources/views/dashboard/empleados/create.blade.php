@@ -72,35 +72,7 @@
                             @enderror
                         </div> 
                         
-                        <div class="form-floating mb-3">
-                            <input type="text" name="Usuario" class="form-control form-floating mb-3" placeholder="Usuario" >
-                            <label for="text">Ingrese el usuario</label>
-                            @error('Usuario')
-                                <small class="text-danger ">{{ $message }}</small>
-                            @enderror
-                        </div> 
-
-                        <div class="form-floating mb-3">
-                            <input type="text" name="Contraseña" class="form-control form-floating mb-3" placeholder="Contraseña" >
-                            <label for="text">Ingrese la contraseña</label>
-                            @error('Contraseña')
-                                <small class="text-danger ">{{ $message }}</small>
-                            @enderror
-                        </div> 
-                        {{-- Tipo de usuario --}}
-                        <div class="form-floating mb-3">
-                            <select name="IdTipoUsuario" id="IdTipoUsuario" class="form-control">
-                                <option value="" selected disabled>Seleccione el tipo de usuario</option>
-                                @foreach ($tipoU as $tipo)
-                                    <option value="{{$tipo->id}}" id="{{$tipo->id}}">{{$tipo->NombreTipo}}</option>
-                                @endforeach
-                            </select>
-
-
-                            @error('IdTipoUsuario')
-                                <small class="text-danger ">{{ $message }}</small>
-                            @enderror
-                        </div>
+                       
 
                         {{-- Sucursal --}}
                         <div class="form-floating mb-3">

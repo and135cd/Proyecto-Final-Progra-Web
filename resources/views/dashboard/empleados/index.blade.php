@@ -45,11 +45,7 @@
                                 Dirección
                             </td>
                            
-                            <td>
-                                Usuario
-                            </td>
-                            
-                            
+                         
                             <td>
                                 Creado
                             </td>
@@ -82,10 +78,7 @@
                             <td>
                                 {{$empleado->Direccion}}
                             </td>
-                            
-                            <td>
-                                {{$empleado->Usuario}}
-                            </td>
+                       
 
                            
                             

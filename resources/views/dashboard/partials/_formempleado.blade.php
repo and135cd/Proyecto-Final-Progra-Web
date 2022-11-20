@@ -55,46 +55,7 @@
                     @enderror
                 </div>
 
-                <div class="form-floating mb-3">
-                    <input type="text" name="Usuario" class="form-control form-floating mb-3" placeholder="Usuario" value="{{$empleado->Usuario}}">
-                    <label for="text">Usuario</label>
-                    @error('Usuario')
-                    <small class="text-light">{{ $message }}</small>
-                    @enderror
-                </div>
-
-                <div class="form-floating mb-3">
-                    <input type="text" name="Contraseña" class="form-control form-floating mb-3" placeholder="Contraseña" value="{{$empleado->Contraseña}}">
-                    <label for="text">Contraseña</label>
-                    @error('Contraseña')
-                    <small class="text-light">{{ $message }}</small>
-                    @enderror
-                </div>
-
-
-                <label for="text" class="mb-1">Tipo de Usuario</label>
                 
-
-                <div class="form-floating mb-3">
-                    <select name="IdTipoUsuario" value="IdTipoUsuario" id="IdTipoUsuario" class="form-control">
-                        <option value="" selected disabled>Seleccione el tipo de usuario</option>
-                        
-                        @foreach ($tipos as $tipo)
-
-                            @if ($empleado->IdTipoUsuario == $tipo->id)
-                                <option selected value="{{$tipo->id}}" id="{{$tipo->id}}">{{$tipo->NombreTipo}}</option>
-                            @else
-                                <option value="{{$tipo->id}}" id="{{$tipo->id}}">{{$tipo->NombreTipo}}</option>
-                            @endif
-                            
-                        @endforeach
-                    </select>
-
-
-                    @error('IdTipoUsuario')
-                        <small class="text-danger ">{{ $message }}</small>
-                    @enderror
-                </div>
                 
                 <label for="text" class="mb-1">Sucursal</label>
                 <div class="form-floating mb-3">

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Empleado extends Model
 {
     use HasFactory;
-    protected $fillable=['Nombres','Apellidos','Telefono','Direccion','Dpi','Usuario','Contraseña','IdTipoUsuario','IdSucursal'];
+    protected $fillable=['Nombres','Apellidos','Telefono','Direccion','Dpi','IdSucursal'];
 
     //Relacion muchos a uno
     public function TipoUsuario(){

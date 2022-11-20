@@ -20,14 +20,13 @@ return new class extends Migration
             $table->string('Telefono');
             $table->string('Direccion');
             $table->string('Dpi');
-            $table->unsignedBigInteger('IdTipoUsuario');
+           
             $table->unsignedBigInteger('IdSucursal');
 
-            $table->foreign('IdTipoUsuario')->references('id')->on('tipousuarios')->onDelete('cascade');
+            
             $table->foreign('IdSucursal')->references('id')->on('sucursals')->onDelete('cascade');
             
-            $table->string('Usuario');
-            $table->string('Contraseña');
+            
             $table->timestamps();
         });
     }
