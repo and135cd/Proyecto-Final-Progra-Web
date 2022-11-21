@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class DepartamentoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('soloadmin',['only'=>['index']]);
+    }
     
     public function index()
     {

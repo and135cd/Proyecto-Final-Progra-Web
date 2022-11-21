@@ -12,7 +12,11 @@ use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('soloadmin',['only'=>['index']]);
+    }
     public function index()
     {
         $empleados=Empleado::orderBy('created_at','desc')->cursorpaginate(5);

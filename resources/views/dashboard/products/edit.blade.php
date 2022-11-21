@@ -84,7 +84,7 @@
                         <select name="brand_id" id="brand_id" class="form-control">
                             <option value="" disabled>Marca</option>
                             @foreach ($marcas as $marca)
-                                @if($producto->IdMarca==$marca->id)
+                                @if($producto->brand_id==$marca->id)
                                     <option selected value="{{$marca->id}}" id="{{$marca->id}}">{{$marca->NombreMarca}}</option>
                                 @else
                                     <option value="{{$marca->id}}" id="{{$marca->id}}">{{$marca->NombreMarca}}</option>
