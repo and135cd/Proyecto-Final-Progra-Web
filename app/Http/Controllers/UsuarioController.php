@@ -9,7 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('sologerente',['only'=>['index']]);
+    }
     public function index()
     {
         $usuarios= User::orderBy('created_at','desc')->cursorpaginate(5);

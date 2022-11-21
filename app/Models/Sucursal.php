@@ -25,7 +25,7 @@ class Sucursal extends Model
         return $this->hasMany(Producto::class,'IdProducto');
     }
 
-    //Relacion uno amuchos
+    //ya no se uso
     public function Ventas(){
         return $this->hasMany(Venta::class,'IdVenta');
     }

@@ -10,7 +10,7 @@ class Empleado extends Model
     use HasFactory;
     protected $fillable=['Nombres','Apellidos','Telefono','Direccion','Dpi','IdSucursal'];
 
-    //Relacion muchos a uno
+    //esta de mas ya no se uso
     public function TipoUsuario(){
         return $this->belongsTo(TipoUsuario::class,'IdTipoUsuario');
     }

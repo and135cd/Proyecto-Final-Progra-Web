@@ -14,7 +14,7 @@ class Departamento extends Model
     public function Sucursales(){
         return $this->hasMany(Sucursal::class,'IdSucursal');
     }
-
+    //esta de mas
     public function Ventas(){
         return $this->hasMany(Venta::class,'IdVenta');
     }
