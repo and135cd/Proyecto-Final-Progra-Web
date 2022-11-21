@@ -1,7 +1,20 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href={{ url('css/app.css') }}>
+    <title>Document</title>
+</head>
+<body>
+    @extends('layouts.app')
+    
 
 @section('content')
-    <div class="container" style="margin-top: 80px">
+<h1 style="text-align: center"><strong>Store Online S.A </strong></h1> 
+    <div class="container" style="margin-top: 10px">
+        
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/shop">Tienda</a></li>
@@ -34,11 +47,13 @@
                 </div>
             @endforeach
         @endif
+        
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <br>
+                
                 @if(\Cart::getTotalQuantity()>0)
-                    <h4>{{ \Cart::getTotalQuantity()}} Producto(s) en el carrito</h4><br>
+                    <h1 style="text-align: center">{{ \Cart::getTotalQuantity()}} Producto(s) en el carrito</h1><br>
                 @else
                     <h4>No Product(s) In Your Cart</h4><br>
                     <a href="/shop" class="btn btn-dark">Continue en la tienda</a>
@@ -52,7 +67,7 @@
                         <div class="col-lg-5">
                             <p>
                                 <b><a href="/shop/{{ $item->attributes->slug }}">{{ $item->name }}</a></b><br>
-                                <b>Price: </b>${{ $item->price }}<br>
+                                <b>Precio: </b>${{ $item->price }}<br>
                                 <b>Sub Total: </b>${{ \Cart::get($item->id)->getPriceSum() }}<br>
                                 {{--                                <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
                             </p>
@@ -63,15 +78,15 @@
                                     {{ csrf_field() }}
                                     <div class="form-group row">
                                         <input type="hidden" value="{{ $item->id}}" id="id" name="id">
-                                        <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
-                                               id="quantity" name="quantity" style="width: 70px; margin-right: 10px;">
-                                        <button class="btn btn-secondary btn-sm" style="margin-right: 25px;"><i class="fa fa-edit"></i></button>
+                                        <input type="number" class="form-control form-control-sm marginleft2" value="{{ $item->quantity }}"
+                                               id="quantity" name="quantity" style="width: 30%; margin-right: 10px;">
+                                        <button class="btn btn-secondary btn-sm mt-3" style="margin-right: 25px;"><i class="fa fa-edit"></i></button>
                                     </div>
                                 </form>
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" value="{{ $item->id }}" id="id" name="id">
-                                    <button class="btn btn-dark btn-sm" style="margin-right: 10px;"><i class="fa fa-trash"></i></button>
+                                    <button class="btn btn-dark btn-sm marginleft3" style="margin-right: 10px;"><i class="fa fa-trash"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -81,22 +96,26 @@
                 @if(count($cartCollection)>0)
                     <form action="{{ route('cart.clear') }}" method="POST">
                         {{ csrf_field() }}
-                        <button class="btn btn-secondary btn-md">Borrar Carrito</button> 
+                        <center><button class="btn btn-secondary btn-md mb-5 mt-3">Borrar Carrito</button> </center>
                     </form>
                 @endif
-            </div>
-            @if(count($cartCollection)>0)
-                <div class="col-lg-5">
+
+                @if(count($cartCollection)>0)
+                <div class="">
                     <div class="card">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><b>Total: </b>${{ \Cart::getTotal() }}</li>
+                            <li class="list-group-item" style="text-align: center"><h4><b>Total: </b>${{ \Cart::getTotal() }}</h4></li>
                         </ul>
                     </div>
-                    <br><a href="/shop" class="btn btn-dark">Continue en la tienda</a>
-                    <a href="/checkout" class="btn btn-success">Proceder al Checkout</a>
+                    <br><a href="/shop" class="btn btn-dark marginleft">Continue en la tienda</a>
+                    <a href="/checkout" class="btn btn-success marginleft">Proceder al Checkout</a>
                 </div>
             @endif
+            </div>
+            
         </div>
         <br><br>
     </div>
 @endsection
+</body>
+</html>

@@ -86,7 +86,7 @@
                     <a class="nav-link" href="/departamentos">Departamentos</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="/departamentos">Sucursales</a>
+                    <a class="nav-link" href="/sucursals">Sucursales</a>
                 </li>
                 <li>
                     <a class="nav-link" href="/clientes">Clientes</a>

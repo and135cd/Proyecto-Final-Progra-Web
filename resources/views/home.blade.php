@@ -56,9 +56,6 @@
                         </li>
                     </ul>
 
-                    
-                    
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -101,6 +98,44 @@
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+
+
+    <div>
+        <center>
+            <h1><img src="https://teelweb.pe/wp-content/uploads/2018/12/Tiendas_Virtuales.png" height="5%" width="5%" alt="" class="mr-3"> 
+                <strong>Store Online S.A </strong>
+                <img src="https://teelweb.pe/wp-content/uploads/2018/12/Tiendas_Virtuales.png" height="5%" width="5%" alt="" class="ml-3"></h1> 
+            
+            <p>Venta de productos de tecnología</p>
+            {{-- carrusel --}}
+            <div id="carouselExampleIndicators" class="carousel slide c" data-bs-ride="true">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://media.gq.com.mx/photos/61e70ca25def32c5619cef06/16:9/w_1280,c_limit/Lenovo%20Yoga%20Slim%207%20Pro.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://www.blogdelfotografo.com/wp-content/uploads/2021/03/mega-guia-reflex-3.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://media.ambito.com/p/446646efeacf790e305fd106ed77b099/adjuntos/239/imagenes/040/062/0040062250/730x0/smart/celularesjpg.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </center>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
