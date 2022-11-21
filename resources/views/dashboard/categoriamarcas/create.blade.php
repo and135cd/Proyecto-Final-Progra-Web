@@ -14,7 +14,6 @@
     <header>
         @include('dashboard.partials.nav-header-admin')
         <br>
-        
         <center><h1 class="mb-5">Ingreso de Productos</h1></center>
     </header>
 

@@ -25,7 +25,7 @@ class SoloGerente
                 return $next($request);
             break;
             case('3'):
-                return redirect('usuario');
+                return redirect('shop');
             break;
         }
     }

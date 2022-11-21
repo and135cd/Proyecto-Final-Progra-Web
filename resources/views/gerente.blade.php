@@ -14,11 +14,11 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Está logueado como gerente!') }}
                 </div>
             </div>
         </div>
     </div>
 </div>
-Soy gerente
+
 @endsection

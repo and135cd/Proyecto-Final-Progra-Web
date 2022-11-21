@@ -25,7 +25,7 @@ class SoloAdmin
                 return redirect('gerente');
             break;
             case('3'):
-                return redirect('usuario');
+                return redirect('shop');
             break;
         }
     }

@@ -30,9 +30,7 @@ use App\Http\Controllers\CartController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CartController::class, 'shop']);
 
 
 route::resource('categorias',CategoriaController::class)->middleware('auth');

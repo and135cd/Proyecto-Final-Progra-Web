@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+        <a class="navbar-brand" href="/shop">
+            {{ config('app.name', 'Tienda Online') }}
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -11,16 +11,10 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{url('usuario')}}">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="/shop">Inicio</a>
                 </li>
                 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('productos.index')}}">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('departamentos.index')}}">Departamentos</a>
-                </li>
-                  
+             x
             </ul>
 
             <!-- Right Side Of Navbar -->

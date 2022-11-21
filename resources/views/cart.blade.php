@@ -4,7 +4,7 @@
     <div class="container" style="margin-top: 80px">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Tienda</a></li>
+                <li class="breadcrumb-item"><a href="/shop">Tienda</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
         </nav>
@@ -41,7 +41,7 @@
                     <h4>{{ \Cart::getTotalQuantity()}} Producto(s) en el carrito</h4><br>
                 @else
                     <h4>No Product(s) In Your Cart</h4><br>
-                    <a href="/" class="btn btn-dark">Continue en la tienda</a>
+                    <a href="/shop" class="btn btn-dark">Continue en la tienda</a>
                 @endif
 
                 @foreach($cartCollection as $item)
@@ -92,7 +92,7 @@
                             <li class="list-group-item"><b>Total: </b>${{ \Cart::getTotal() }}</li>
                         </ul>
                     </div>
-                    <br><a href="/" class="btn btn-dark">Continue en la tienda</a>
+                    <br><a href="/shop" class="btn btn-dark">Continue en la tienda</a>
                     <a href="/checkout" class="btn btn-success">Proceder al Checkout</a>
                 </div>
             @endif

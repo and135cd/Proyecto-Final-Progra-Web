@@ -4,7 +4,7 @@
     <div class="container" style="margin-top: 80px">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/shop">Inicio</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Tienda</li>
             </ol>
         </nav>
@@ -22,7 +22,7 @@
                             <div class="card" style="margin-bottom: 20px; height: auto;">
                                 <img src="{{asset($pro->image_path)}}"
                                      class="card-img-top mx-auto"
-                                     style="height: 150px; width: 150px;display: block;"
+                                     style="height: 150px; width: 260px;display: block;"
                                      alt="{{ $pro->image_path }}"
                                 >
                                 <div class="card-body">
