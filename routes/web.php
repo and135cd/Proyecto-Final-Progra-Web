@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 
 //andrew
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,7 @@ route::resource('empleados',EmpleadoController::class)->middleware('auth');
 route::resource('productos',ProductoController::class)->middleware('auth');
 route::resource('categoriamarcas',CategoriaMarcaController::class)->middleware('auth');
 route::resource('ventas',VentaController::class)->middleware('auth');
+route::resource('usuarios',UsuarioController::class)->middleware('auth');
 
 Auth::routes();
 
