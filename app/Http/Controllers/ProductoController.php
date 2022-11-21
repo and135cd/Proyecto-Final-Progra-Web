@@ -26,9 +26,9 @@ class ProductoController extends Controller
     public function store(StoreProductoPost $request)
     {
         $requestData=$request->all();
-        $fileName=time().$request->file('Imagen')->getClientOriginalName();
-        $path=$request->file('Imagen')->storeAs('imagenes',$fileName,'public');
-        $requestData['Imagen']='/storage/'.$path;
+        $fileName=time().$request->file('image_path')->getClientOriginalName();
+        $path=$request->file('image_path')->storeAs('imagenes',$fileName,'public');
+        $requestData['image_path']='/storage/'.$path;
         Producto::create($requestData);
 
         return redirect('productos/create')->with('status', 'El producto ha sido creado con exito');

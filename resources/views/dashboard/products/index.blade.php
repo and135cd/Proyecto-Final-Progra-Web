@@ -35,31 +35,29 @@
                             <td>
                                 Nombre
                             </td>
+                       
+                            <td>
+                                Detalles
+                            </td>
                             <td>
                                 Precio
                             </td>
+                         
                             <td>
-                                Estado
+                                Descripcion
                             </td>
                             <td>
-                                Código
+                                Sucursal
+                            </td>
+                            <td>
+                                Marca
                             </td>
 
-                            <td>
-                                Stock
-                            </td>
-                           
                             <td>
                                 Imagen
                             </td>
                             
-                            
-                            <td>
-                                Creado
-                            </td>
-                            <td>
-                                Actualizado
-                            </td>
+                       
                             <td>
                                 Acciones
                             </td>
@@ -75,37 +73,34 @@
                                 {{$producto->id}}
                             </td>
                             <td>
-                                {{$producto->NombreProducto}}
+                                {{$producto->name}}
+                            </td>
+                         
+                            
+                            <td>
+                                {{$producto->details}}
                             </td>
                             <td>
-                                {{$producto->Precio}}
+                                {{$producto->price}}
+                            </td>
+                          
+                            <td>
+                                {{$producto->description}}
                             </td>
                             <td>
-                                @if ($producto->Estado==1)
-                                    <span class="badge rounded-pill text-bg-danger">Borrador</span>
-                                @else
-                                    <span class="badge rounded-pill text-bg-success">Publicado</span>
-                                @endif
+                                {{$producto->Sucursales->Direccion}}
                             </td>
                             <td>
-                                {{$producto->Codigo}}
-                            </td>
-                            <td>
-                                {{$producto->Stock}}
+                                {{$producto->Marca->NombreMarca}}
                             </td>
                             
                             <td>
-                                <img src="{{asset($producto->Imagen)}}" width="50" height="50" alt="">
+                                <img src="{{asset($producto->image_path)}}" width="50" height="50" alt="">
                             </td>
 
                            
                             
-                            <td>
-                                {{$producto->created_at->format('d-m-Y')}}
-                            </td>
-                            <td>
-                                {{$producto->updated_at->format('d-m-Y')}}
-                            </td>
+                       
                             <td>
                                 <a href="{{route('productos.show',$producto->id)}}" class="btn btn-outline-info">Ver</a>
                                 <a href="{{route('productos.edit',$producto->id)}}" class="btn btn-outline-warning">Actualizar</a>

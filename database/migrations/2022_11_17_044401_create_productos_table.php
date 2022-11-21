@@ -16,21 +16,20 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->string('NombreProducto');
-            $table->decimal('Precio');
-            $table->enum('Estado',[Producto::BORRADOR,Producto::PUBLICADO])->default(Producto::BORRADOR); //1 borrador 2 publicado
-            $table->string('Codigo');
-            $table->string('Imagen');
-            $table->string('Descripcion');
-            $table->integer('Stock');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('details');
+            $table->decimal('price');
+            $table->decimal('shipping_cost');
+            $table->string('description');
             
-            $table->unsignedBigInteger('IdMarca');
-            $table->unsignedBigInteger('IdSucursal');
+            $table->unsignedBigInteger('sucursal_id');
+            $table->unsignedBigInteger('brand_id');
 
-            $table->foreign('IdMarca')->references('id')->on('marcas')->onDelete('cascade');
-            $table->foreign('IdSucursal')->references('id')->on('sucursals')->onDelete('cascade');
+            $table->foreign('brand_id')->references('id')->on('marcas')->onDelete('cascade');
+            $table->foreign('sucursal_id')->references('id')->on('sucursals')->onDelete('cascade');
 
-            
+            $table->string('image_path');
             $table->timestamps();
         });
     }

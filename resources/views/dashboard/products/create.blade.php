@@ -33,43 +33,56 @@
                         
 
                         <div class="form-floating mb-3">
-                            <input type="text" name="NombreProducto" class="form-control form-floating mb-3" placeholder="NombreProducto" >
+                            <input type="text" name="name" class="form-control form-floating mb-3" placeholder="name" >
                             <label for="text">Ingrese el nombre del producto</label>
-                            @error('NombreProducto')
+                            @error('name')
                                 <small class="text-danger ">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="number" step="0.25" name="Precio" class="form-control form-floating mb-3" placeholder="Precio" >
+                            <input type="text" name="slug" class="form-control form-floating mb-3" placeholder="slug" >
+                            <label for="text">Slug</label>
+                            @error('slug')
+                                <small class="text-danger ">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="details" class="form-control form-floating mb-3" placeholder="details" >
+                            <label for="text">Detalles</label>
+                            @error('details')
+                                <small class="text-danger ">{{ $message }}</small>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="number" step="0.25" name="price" class="form-control form-floating mb-3" placeholder="price" >
                             <label for="text">Precio</label>
-                            @error('Precio')
+                            @error('price')
                                 <small class="text-danger ">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="text" name="Descripcion" class="form-control form-floating mb-3" placeholder="Descripcion" >
+                            <input type="number" step="0.25" name="shipping_cost" class="form-control form-floating mb-3" placeholder="shipping_cost" >
+                            <label for="text">Envio</label>
+                            @error('shipping_cost')
+                                <small class="text-danger ">{{ $message }}</small>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" name="description" class="form-control form-floating mb-3" placeholder="description" >
                             <label for="text">Descripcion</label>
-                            @error('Descripcion')
+                            @error('description')
                                 <small class="text-danger ">{{ $message }}</small>
                             @enderror
                         </div>
 
-                        
-
-                        <div class="form-floating mb-3">
-                            <input type="text" name="Codigo" class="form-control form-floating mb-3" placeholder="Codigo" >
-                            <label for="text">Código</label>
-                            @error('Codigo')
-                                <small class="text-danger ">{{ $message }}</small>
-                            @enderror
-                        </div> 
-                        
                         
                         {{-- Tipo de usuario --}}
                         <div class="form-floating mb-3">
-                            <select name="IdMarca" id="IdMarca" class="form-control">
+                            <select name="brand_id" id="brand_id" class="form-control">
                                 <option value="" selected disabled>Seleccione una marca</option>
                                 @foreach ($marcas as $marca)
                                     <option value="{{$marca->id}}" id="{{$marca->id}}">{{$marca->NombreMarca}}</option>
@@ -77,13 +90,13 @@
                             </select>
 
 
-                            @error('IdMarca')
+                            @error('brand_id')
                                 <small class="text-danger ">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-floating mb-3">
-                            <select name="IdSucursal" id="IdSucursal" class="form-control">
+                            <select name="sucursal_id" id="sucursal_id" class="form-control">
                                 <option value="" selected disabled>Seleccione una sucursal</option>
                                 @foreach ($sucursals as $sucursal)
                                     <option value="{{$sucursal->id}}" id="{{$sucursal->id}}">{{$sucursal->Direccion}}</option>
@@ -91,37 +104,20 @@
                             </select>
 
 
-                            @error('IdSucursal')
+                            @error('sucursal_id')
                                 <small class="text-danger ">{{ $message }}</small>
                             @enderror
                         </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="number" step="0.25" name="Stock" class="form-control form-floating mb-3" placeholder="Stock" >
-                            <label for="text">Stock</label>
-                            @error('Stock')
-                                <small class="text-danger ">{{ $message }}</small>
-                            @enderror
-                        </div>
+                     
 
                         
-                        <div class="form-floating mb-3">
-                            <select name="Estado" id="Estado" class="form-control">
-                                <option value="" selected disabled>Seleccione un estado</option>
-                                <option value="1">Borrador</option>
-                                <option value="2">Publicado</option>
-                            </select>
-
-
-                            @error('Estado')
-                                <small class="text-danger ">{{ $message }}</small>
-                            @enderror
-                        </div>
+                       
 
                         <div class="my-2">
                             <label >Imagen</label>
-                            <input class="form-control mb-3" name="Imagen" id="Imagen" type="file">
-                            @error('Imagen')
+                            <input class="form-control mb-3" name="image_path" id="Imagen" type="file">
+                            @error('image_path')
                             <small class="text-danger ">{{ $message }}</small>
                             @enderror
                         </div>

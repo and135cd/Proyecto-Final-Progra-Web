@@ -30,54 +30,58 @@
                     
                     
                     <div class="form-floating mb-3">
-                        <input type="text" name="NombreProducto" class="form-control form-floating mb-3" placeholder="NombreProducto" value="{{$producto->NombreProducto}}">
+                        <input type="text" name="name" class="form-control form-floating mb-3" placeholder="name" value="{{$producto->name}}">
                         <label for="text">Nombre</label>
-                        @error('NombreProducto')
-                        <small class="text-light">{{ $message }}</small>
+                        @error('name')
+                            <small class="text-light">{{ $message }}</small>
                         @enderror
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="number " step="0.25" name="Precio" class="form-control form-floating mb-3" placeholder="Precio" value="{{$producto->Precio}}">
+                        <input type="text" name="slug" class="form-control form-floating mb-3" placeholder="slug" value="{{$producto->slug}}">
+                        <label for="text">Slug</label>
+                        @error('slug')
+                            <small class="text-light">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" name="details" class="form-control form-floating mb-3" placeholder="details" value="{{$producto->details}}">
+                        <label for="text">Detalles</label>
+                        @error('details')
+                            <small class="text-light">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="number " step="0.25" name="price" class="form-control form-floating mb-3" placeholder="price" value="{{$producto->price}}">
                         <label for="text">Precio</label>
-                        @error('Precio')
-                        <small class="text-light">{{ $message }}</small>
+                        @error('price')
+                            <small class="text-light">{{ $message }}</small>
                         @enderror
                     </div>
 
                     <div class="form-floating mb-3">
-                       <select name="Estado" id="Estado" class="form-control">
-                        @if ($producto->Estado==1)
-                            <option selected value="1">Borrador</option>
-                            <option value="2">Publicado</option>
-                        @else
-                            <option  value="1">Borrador</option>
-                            <option selected value="2">Publicado</option>
-                        @endif
-                       </select>
-                        @error('Estado')
-                        <small class="text-light">{{ $message }}</small>
+                        <input type="number " step="0.25" name="shipping_cost" class="form-control form-floating mb-3" placeholder="shipping_cost" value="{{$producto->shipping_cost}}">
+                        <label for="text">Envio</label>
+                        @error('shipping_cost')
+                            <small class="text-light">{{ $message }}</small>
                         @enderror
                     </div>
+                  
+
+                
 
                     <div class="form-floating mb-3">
-                        <input type="text "  name="Codigo" class="form-control form-floating mb-3" placeholder="Codigo" value="{{$producto->Codigo}}">
-                        <label for="text">Codigo</label>
-                        @error('Codigo')
-                        <small class="text-light">{{ $message }}</small>
-                        @enderror
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text "  name="Descripcion" class="form-control form-floating mb-3" placeholder="Descripcion" value="{{$producto->Descripcion}}">
+                        <input type="text "  name="description" class="form-control form-floating mb-3" placeholder="description" value="{{$producto->description}}">
                         <label for="text">Descripcion</label>
-                        @error('Descripcion')
-                        <small class="text-light">{{ $message }}</small>
+                        @error('description')
+                            <small class="text-light">{{ $message }}</small>
                         @enderror
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select name="IdMarca" id="IdMarca" class="form-control">
+                        <select name="brand_id" id="brand_id" class="form-control">
                             <option value="" disabled>Marca</option>
                             @foreach ($marcas as $marca)
                                 @if($producto->IdMarca==$marca->id)
@@ -91,10 +95,10 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select name="IdSucursal" id="IdSucursal" class="form-control">
+                        <select name="sucursal_id" id="sucursal_id" class="form-control">
                             <option value="" selected disabled>Seleccione una sucursal</option>
                             @foreach ($sucursals as $sucursal)
-                                @if ($producto->IdSucursal==$sucursal->id)
+                                @if ($producto->sucursal_id==$sucursal->id)
                                     <option selected value="{{$sucursal->id}}" id="{{$sucursal->id}}">{{$sucursal->Direccion}}</option>
                                 @else
                                     <option value="{{$sucursal->id}}" id="{{$sucursal->id}}">{{$sucursal->Direccion}}</option>
@@ -103,18 +107,11 @@
                         </select>
 
 
-                        @error('IdSucursal')
+                        @error('sucursal_id')
                             <small class="text-danger ">{{ $message }}</small>
                         @enderror
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <input type="number "  name="Stock" class="form-control form-floating mb-3" placeholder="Stock" value="{{$producto->Stock}}">
-                        <label for="text">Stock</label>
-                        @error('Stock')
-                        <small class="text-light">{{ $message }}</small>
-                        @enderror
-                    </div>
 
                    
                     <center>

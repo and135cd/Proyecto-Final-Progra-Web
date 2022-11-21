@@ -8,23 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     use HasFactory;
-    const BORRADOR=1;
-    const PUBLICADO=2;
     
-    protected $fillable=['NombreProducto','Descripcion','Precio','Estado','Codigo','Imagen','IdMarca','IdSucursal','Stock'];
-    
+    protected $fillable=['name','slug','details','price','shipping_cost','description','sucursal_id','brand_id','image_path'];
+    protected $table='productos';
 
     public function Sucursales(){
-        $this->belongsTo(Sucursal::class,'IdSucursal');
+        return $this->belongsTo(Sucursal::class,'sucursal_id');
     }
 
     //Relacion muchos a uno
     public function Marca(){
-        return $this->belongsTo(Marca::class,'IdMarca');
+        return $this->belongsTo(Marca::class,'brand_id');
     }
 
     //Relacion uno a muchos
     public function DetalleVentas(){
-        return $this->hasMany(DetalleVenta::class,'IdDetalleVenta');
+        return $this->hasMany(DetalleVenta::class);
     }
 }
