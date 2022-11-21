@@ -12,7 +12,7 @@
 <body>
 
     
-    <header>@include('dashboard.partials.nav-header-admin')</header>
+    <header>@include('dashboard.partials.nav-header-gerente')</header>
 
     <!-- Si hay cualquier tipo de error se generara algo -->
   
@@ -73,9 +73,8 @@
                             </td>
                             <td>
                                 <a href="{{route('usuarios.show',$usuario->id)}}" class="btn btn-outline-info">Ver</a>
-                                <a href="{{route('usuarios.edit',$usuario->id)}}" class="btn btn-outline-warning">Actualizar</a>
-                                                        
-                                <form method="POST" action="{{route('usuarios.destroy',$usuario->id)}}">
+                                                         
+                                <form style="display:inline" method="POST" action="{{route('usuarios.destroy',$usuario->id)}}">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn btn-outline-danger ms-5" type="submit">Borrar</button>

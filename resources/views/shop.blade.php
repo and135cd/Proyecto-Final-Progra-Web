@@ -120,7 +120,7 @@
             </article>
 
         <article class="col-xs-12 col-sm-12 col-md-12 col-lg-1 mt-3">
-            <br><a title="Contactanos" target="_blank" rel="noopener" href="https://api.whatsapp.com/send?phone=50242779761&text=Tienda%20Online,%20En%20que%20te%20podemos%20ayudar?%20:)">
+            <br><a title="Contactanos" target="_blank" rel="noopener" href="https://api.whatsapp.com/send?phone=50242779761&text=Tienda%20Online,%20Me%20brindarian%20mas%20informacion?%20:)">
                 <center><img src="https://www.labolsera.com/modules/cdesigner/views/img/upload/418628dceb02a596976e72a10e896afff49562bc_whatsapp.png" alt="" width="50%" height="5%">
             </a>
         </article>

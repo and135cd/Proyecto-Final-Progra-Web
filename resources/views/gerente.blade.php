@@ -34,26 +34,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li>
-                            <a class="nav-link" href="/productos">Productos</a>
+                            <a class="nav-link" href="/usuarios">Usuarios</a>
                         </li>
-                        <li>
-                            <a class="nav-link" href="/marcas">Marcas</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="/departamentos">Departamentos</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="/departamentos">Sucursales</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="/clientes">Clientes</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="/empleados">Empleados</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="/categorias">Categorías</a>
-                        </li>
+                       
                     </ul>
 
                     
